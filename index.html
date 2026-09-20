@@ -10,13 +10,13 @@
   
   <style>
     :root {
-      --bg-dark: #000000;
-      --bg-header: rgba(0, 0, 0, 0.82);
-      --bg-control: rgba(18, 18, 18, 0.78);
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-control: rgba(255, 255, 255, 0.14);
-      --text-primary: #ffffff;
-      --text-muted: #888888;
+      --bg-dark: #030712;
+      --bg-header: rgba(10, 15, 28, 0.65);
+      --bg-control: rgba(15, 23, 42, 0.65);
+      --border-subtle: rgba(255, 255, 255, 0.09);
+      --border-control: rgba(255, 255, 255, 0.16);
+      --text-primary: #f8fafc;
+      --text-muted: #94a3b8;
     }
 
     * {
@@ -26,10 +26,10 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* Custom AMOLED Dark Scrollbar */
+    /* Custom Theme-Matched Dark Scrollbar */
     * {
       scrollbar-width: thin;
-      scrollbar-color: rgba(255, 255, 255, 0.22) #000000;
+      scrollbar-color: rgba(255, 255, 255, 0.2) #030712;
     }
 
     ::-webkit-scrollbar {
@@ -38,11 +38,11 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #000000;
+      background: #030712;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.18);
       border-radius: 9999px;
     }
 
@@ -59,7 +59,7 @@
       color: var(--text-primary);
     }
 
-    /* Minimal AMOLED Top Bar */
+    /* Modern Glassmorphic Top Bar */
     header {
       position: fixed;
       top: 0;
@@ -67,13 +67,14 @@
       right: 0;
       height: 52px;
       background: var(--bg-header);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
       border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 18px;
+      padding: 0 20px;
       z-index: 100;
     }
 
@@ -94,7 +95,7 @@
     }
 
     .dot-separator {
-      color: #333333;
+      color: rgba(255, 255, 255, 0.2);
       font-size: 12px;
     }
 
@@ -115,32 +116,32 @@
       height: 38px;
       border-radius: 9999px;
       background: var(--bg-control);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       border: 1px solid var(--border-control);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .btn-download-icon:hover {
-      background: rgba(40, 40, 40, 0.95);
-      border-color: rgba(255, 255, 255, 0.35);
-      color: #ffffff;
+      background: rgba(30, 41, 59, 0.85);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #38bdf8;
       transform: scale(1.08);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 14px rgba(255, 255, 255, 0.12);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.25);
     }
 
     .btn-download-icon:active {
       transform: scale(0.92);
     }
 
-    /* Document Viewport (LeaveDesk Pattern on AMOLED Black) */
+    /* Document Viewport with subtle Glassmorphism ambient background */
     .viewport {
       position: absolute;
       top: 52px;
@@ -155,7 +156,11 @@
       align-items: center;
       scrollbar-gutter: stable;
       -webkit-overflow-scrolling: touch;
-      background: #000000;
+      background: #030712;
+      background-image:
+        radial-gradient(at 15% 15%, rgba(30, 58, 138, 0.18) 0px, transparent 55%),
+        radial-gradient(at 85% 20%, rgba(76, 29, 149, 0.14) 0px, transparent 55%),
+        radial-gradient(at 50% 85%, rgba(15, 23, 42, 0.8) 0px, transparent 65%);
     }
 
     .scroll-inner {
@@ -167,7 +172,7 @@
       min-height: 100%;
       min-width: 100%;
       width: max-content;
-      padding: 20px 16px 80px 16px;
+      padding: 24px 16px 80px 16px;
     }
 
     .doc-wrapper {
@@ -189,9 +194,12 @@
       height: auto;
       width: 100%;
       max-width: none;
-      border-radius: 4px;
+      border-radius: 6px;
       background-color: #ffffff;
-      box-shadow: 0 0 50px rgba(255, 255, 255, 0.04), 0 25px 60px -10px rgba(0, 0, 0, 0.95);
+      box-shadow: 
+        0 0 50px rgba(56, 189, 248, 0.05),
+        0 25px 60px -10px rgba(0, 0, 0, 0.85),
+        0 1px 2px rgba(255, 255, 255, 0.1);
     }
 
     /* Floating HUD Controls */
@@ -206,24 +214,25 @@
       pointer-events: auto;
       border-radius: 9999px;
       background: var(--bg-control);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       border: 1px solid var(--border-control);
-      box-shadow: 0 12px 25px -4px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
       outline: none;
       font-family: inherit;
     }
 
     .hud-btn:hover:not(:disabled) {
-      background: rgba(40, 40, 40, 0.95);
+      background: rgba(30, 41, 59, 0.85);
       transform: scale(1.06);
       border-color: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 14px 35px -3px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.25);
     }
 
     .hud-btn:active:not(:disabled) {
@@ -292,7 +301,7 @@
 </head>
 <body>
 
-  <!-- Minimal AMOLED Top Bar -->
+  <!-- Modern Glassmorphic Top Bar -->
   <header>
     <div class="header-left">
       <span class="header-title">IIT Roorkee</span>
