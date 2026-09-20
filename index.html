@@ -10,13 +10,13 @@
   
   <style>
     :root {
-      --bg-dark: #030712;
-      --bg-header: rgba(10, 15, 28, 0.65);
-      --bg-control: rgba(15, 23, 42, 0.65);
-      --border-subtle: rgba(255, 255, 255, 0.09);
-      --border-control: rgba(255, 255, 255, 0.16);
-      --text-primary: #f8fafc;
-      --text-muted: #94a3b8;
+      --bg-dark: #000000;
+      --bg-header: rgba(18, 18, 22, 0.75);
+      --bg-control: rgba(255, 255, 255, 0.08);
+      --border-header: rgba(255, 255, 255, 0.26);
+      --border-control: rgba(255, 255, 255, 0.2);
+      --text-primary: #ffffff;
+      --text-muted: #a1a1aa;
     }
 
     * {
@@ -26,10 +26,10 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* Custom Theme-Matched Dark Scrollbar */
+    /* Custom AMOLED Dark Scrollbar */
     * {
       scrollbar-width: thin;
-      scrollbar-color: rgba(255, 255, 255, 0.2) #030712;
+      scrollbar-color: rgba(255, 255, 255, 0.22) #000000;
     }
 
     ::-webkit-scrollbar {
@@ -38,16 +38,16 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #030712;
+      background: #000000;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 9999px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.38);
     }
 
     html, body {
@@ -59,7 +59,7 @@
       color: var(--text-primary);
     }
 
-    /* Modern Glassmorphic Top Bar */
+    /* Modern Glassmorphic Top Bar with Visible Divider Line on AMOLED */
     header {
       position: fixed;
       top: 0;
@@ -67,10 +67,10 @@
       right: 0;
       height: 52px;
       background: var(--bg-header);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border-bottom: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(24px) saturate(190%) contrast(105%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%) contrast(105%);
+      border-bottom: 1px solid var(--border-header);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 30px rgba(0, 0, 0, 0.85);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -95,7 +95,7 @@
     }
 
     .dot-separator {
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.3);
       font-size: 12px;
     }
 
@@ -119,7 +119,7 @@
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
       border: 1px solid var(--border-control);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.18);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -130,18 +130,18 @@
     }
 
     .btn-download-icon:hover {
-      background: rgba(30, 41, 59, 0.85);
-      border-color: rgba(255, 255, 255, 0.4);
-      color: #38bdf8;
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.45);
+      color: #ffffff;
       transform: scale(1.08);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.3);
     }
 
     .btn-download-icon:active {
       transform: scale(0.92);
     }
 
-    /* Document Viewport with subtle Glassmorphism ambient background */
+    /* Document Viewport - Pure AMOLED Black */
     .viewport {
       position: absolute;
       top: 52px;
@@ -156,11 +156,7 @@
       align-items: center;
       scrollbar-gutter: stable;
       -webkit-overflow-scrolling: touch;
-      background: #030712;
-      background-image:
-        radial-gradient(at 15% 15%, rgba(30, 58, 138, 0.18) 0px, transparent 55%),
-        radial-gradient(at 85% 20%, rgba(76, 29, 149, 0.14) 0px, transparent 55%),
-        radial-gradient(at 50% 85%, rgba(15, 23, 42, 0.8) 0px, transparent 65%);
+      background: #000000;
     }
 
     .scroll-inner {
@@ -194,12 +190,12 @@
       height: auto;
       width: 100%;
       max-width: none;
-      border-radius: 6px;
+      border-radius: 4px;
       background-color: #ffffff;
       box-shadow: 
-        0 0 50px rgba(56, 189, 248, 0.05),
-        0 25px 60px -10px rgba(0, 0, 0, 0.85),
-        0 1px 2px rgba(255, 255, 255, 0.1);
+        0 0 50px rgba(255, 255, 255, 0.05),
+        0 25px 60px -10px rgba(0, 0, 0, 0.95),
+        0 1px 2px rgba(255, 255, 255, 0.12);
     }
 
     /* Floating HUD Controls */
@@ -217,7 +213,7 @@
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
       border: 1px solid var(--border-control);
-      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.18);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -229,10 +225,10 @@
     }
 
     .hud-btn:hover:not(:disabled) {
-      background: rgba(30, 41, 59, 0.85);
+      background: rgba(255, 255, 255, 0.16);
       transform: scale(1.06);
-      border-color: rgba(255, 255, 255, 0.35);
-      box-shadow: 0 14px 35px -3px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.45);
+      box-shadow: 0 14px 35px -3px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.3);
     }
 
     .hud-btn:active:not(:disabled) {
